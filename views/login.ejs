@@ -1,0 +1,38 @@
+<!-- Login page -->
+
+<%- include('./shared/header.ejs') %>
+
+<div class="user my-3"></div>
+<div class="form-content mx-auto my-5">
+  <i class="fas fa-user-secret"></i>
+  <h4 class="login">Login</h4>
+  <form method="POST" action="/handleLogin">
+    <% if (success && success.length> 0) { %>
+    <div class="alert alert-success"><%= success %></div>
+    <% } %> <% if (error && error.length> 0) { %>
+    <span class="text-danger d-block my-2"> <%= error[0] %> </span>
+    <% } else if (validationError && validationError.length> 0) { %>
+    <span class="text-danger d-block my-2"> <%= validationError[0] %> </span>
+    <% } %>
+
+    <input
+      class="form-control"
+      placeholder="Enter your email"
+      type="text"
+      name="email"
+      value="<%= data?.email || '' %>"
+    />
+    <input
+      class="form-control my-4"
+      placeholder="Enter your Password"
+      type="password"
+      name="password"
+      value="<%= data?.password || '' %>"
+    />
+    <button class="btn-custom rounded">Login</button>
+    <a class="text-muted m-0 d-block py-1" href="">I Forgot My Password</a>
+    <a class="navigate-page" href="register">Register</a>
+  </form>
+</div>
+
+<%- include('./shared/footer.ejs') %>

@@ -1,0 +1,421 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =========== Variables ============ */
+:root {
+  --primary: #fd7014;
+  --Secondary: #393e46;
+  --text-light: #fff;
+  --text-dark: #000;
+  --background: #fff;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Styles */
+body.dark {
+  --text-light: #000;
+  --text-dark: #fff;
+  --background: #222831;
+
+  --shadow: 0 1px 3px rgba(255, 255, 255, 0.05),
+    0 2px 5px rgba(255, 255, 255, 0.03);
+}
+
+/* Global Styles */
+body {
+  overflow: hidden;
+  background-color: var(--background);
+  font-family: "Ubuntu", sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+h3 {
+  color: var(--primary);
+}
+
+p {
+  color: var(--text-dark);
+}
+/* Button Styles */
+.btn-custom {
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 6px;
+  width: 150px;
+  text-align: center;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: var(--Secondary);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+nav .nav-link {
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  padding: 6px 8px;
+}
+
+nav .nav-link:hover {
+  background-color: var(--primary);
+  padding: 6px 10px;
+}
+.home h4 {
+  color: var(--text-dark);
+}
+/* Form Styles */
+.form-content h4 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.form-content {
+  text-align: center;
+  width: 50%;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+}
+
+.form-content i {
+  color: var(--primary);
+}
+
+.form-content .navigate-page {
+  color: var(--Secondary);
+}
+
+.form-content .navigate-page:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.card-profile {
+  position: relative;
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+}
+
+textarea,
+input {
+  background-color: var(--background) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid #fd701429 !important;
+}
+
+input:focus,
+textarea {
+  box-shadow: none !important;
+  border-color: var(--primary) !important;
+}
+
+.item {
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  border: 1px solid #fd701429;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  border: 1px solid var(--primary);
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.share {
+  margin: 0px auto 10px auto;
+}
+
+/* Avatar Styles */
+.avatar {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+/* Alerts */
+.alert-success {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .form-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-xl {
+    gap: 10px;
+  }
+}
+
+/* Dark Mode */
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  width: 64px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73c0fc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: 0.4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 14px;
+}
+
+.moon svg {
+  fill: #73c0fc;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 14px;
+}
+
+/* .switch:hover */
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Not found */
+
+.err-page h1 {
+  color: var(--primary);
+}
+
+.container-err {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  left: 6vmin;
+  text-align: center;
+}
+
+.cog-wheel1,
+.cog-wheel2 {
+  transform: scale(0.7);
+}
+
+.cog1,
+.cog2 {
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  border: 6vmin solid #f3c623;
+  position: relative;
+}
+
+.cog2 {
+  border: 6vmin solid #4f8a8b;
+}
+
+.top,
+.down,
+.left,
+.right,
+.left-top,
+.left-down,
+.right-top,
+.right-down {
+  width: 10vmin;
+  height: 10vmin;
+  background-color: #f3c623;
+  position: absolute;
+}
+
+.cog2 .top,
+.cog2 .down,
+.cog2 .left,
+.cog2 .right,
+.cog2 .left-top,
+.cog2 .left-down,
+.cog2 .right-top,
+.cog2 .right-down {
+  background-color: #4f8a8b;
+}
+
+.top {
+  top: -14vmin;
+  left: 9vmin;
+}
+
+.down {
+  bottom: -14vmin;
+  left: 9vmin;
+}
+
+.left {
+  left: -14vmin;
+  top: 9vmin;
+}
+
+.right {
+  right: -14vmin;
+  top: 9vmin;
+}
+
+.left-top {
+  transform: rotateZ(-45deg);
+  left: -8vmin;
+  top: -8vmin;
+}
+
+.left-down {
+  transform: rotateZ(45deg);
+  left: -8vmin;
+  top: 25vmin;
+}
+
+.right-top {
+  transform: rotateZ(45deg);
+  right: -8vmin;
+  top: -8vmin;
+}
+
+.right-down {
+  transform: rotateZ(-45deg);
+  right: -8vmin;
+  top: 25vmin;
+}
+
+.cog2 {
+  position: relative;
+  left: -10.2vmin;
+  bottom: 10vmin;
+}
+
+h1 {
+  color: #142833;
+}
+
+.first-four {
+  position: relative;
+  left: 6vmin;
+  font-size: 40vmin;
+}
+
+.second-four {
+  position: relative;
+  right: 18vmin;
+  z-index: -1;
+  font-size: 40vmin;
+}
+
+.wrong-para {
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  bottom: 15vmin;
+  padding: 3vmin 12vmin 3vmin 3vmin;
+  font-weight: 600;
+  color: #092532;
+}

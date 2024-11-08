@@ -1,0 +1,42 @@
+<%- include('./shared/header.ejs') %>
+
+<div class="user my-3"></div>
+<div class="form-content mx-auto my-5">
+  <form method="POST" action="/handleRegister">
+    <i class="far fa-edit user-icon"></i>
+    <h4 class="login">Register</h4>
+    <% if (success && success.length> 0) { %>
+    <div class="alert alert-success"><%= success %></div>
+    <% } %> <% if (error && error.length> 0) { %>
+    <span class="text-danger d-block my-2"> <%= error[0] %> </span>
+    <% } else if (validationError && validationError.length> 0) { %>
+    <span class="text-danger d-block my-2"> <%= validationError[0] %> </span>
+    <% } %>
+    <input
+      class="form-control my-3"
+      placeholder="Enter your Name"
+      type="text"
+      name="name"
+      value="<%= data?.name || '' %>"
+    />
+    <input
+      class="form-control my-3"
+      placeholder="Enter your email"
+      type="email"
+      name="email"
+      value="<%= data?.email || '' %>"
+    />
+    <input
+      class="form-control my-3"
+      placeholder="Enter your Password"
+      type="password"
+      name="password"
+      value="<%= data?.password || '' %>"
+    />
+
+    <button class="btn-custom rounded mt-3 mb-2">Register</button>
+    <a class="navigate-page d-block" href="/login">Login</a>
+  </form>
+</div>
+
+<%- include('./shared/footer.ejs') %>
