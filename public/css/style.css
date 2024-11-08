@@ -158,16 +158,22 @@ textarea {
   border: none !important;
 }
 
+.modal-body {
+  overflow: hidden;
+  word-break: break-all;
+}
+
 /* Media Queries */
 @media (max-width: 767px) {
   .form-content {
-    width: 100%;
+    width: 95%;
   }
 }
 
 @media (max-width: 600px) {
   .container-xl {
     gap: 10px;
+    width: 100%;
   }
 }
 
